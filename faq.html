@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – Varian Sakura</title>
+  <style>
+    :root{
+      --pink:#ff4da6;--pink-soft:#fff1f7;--text:#2c2c2c;--muted:#555;--glass:rgba(255,255,255,.88);
+      --line:rgba(0,0,0,.08);--shadow:0 10px 24px rgba(0,0,0,.10);--radius:18px;--max:950px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:url("assets/images/background.png") center/cover fixed}
+    .container{max-width:var(--max);margin:auto;padding:14px}
+    .panel{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+    .topbar,.hero,.bottom,.footer{padding:14px}
+    .brand h1{margin:0;font-size:24px}
+    .nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .nav a{padding:8px 12px;background:#fff;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:#333;font-weight:bold;font-size:14px}
+    .hero,.bottom{margin-top:14px}
+    .hero h2,.bottom h3{margin:0 0 8px}
+    .hero p,.bottom p{margin:0;line-height:1.6;color:var(--muted)}
+    .faq-list{margin-top:14px;display:grid;gap:12px}
+    .faq-item{overflow:hidden}
+    .q{width:100%;border:0;background:transparent;text-align:left;padding:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:bold;font-size:16px}
+    .icon{width:30px;height:30px;border-radius:999px;background:var(--pink-soft);display:flex;align-items:center;justify-content:center;color:#c2185b;font-size:20px}
+    .a{display:none;padding:0 16px 16px;color:var(--muted);line-height:1.6}
+    .faq-item.open .a{display:block}
+    .buttons{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;text-decoration:none;background:var(--pink);color:#fff;padding:11px 15px;border-radius:12px;font-weight:bold}
+    .btn.secondary{background:#333}
+    .footer{margin-top:18px}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .footer-box h5{margin:0 0 8px}
+    .footer-box p,.footer-box a{margin:0;line-height:1.6;color:var(--muted);text-decoration:none}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px}
+    .footer-links a{color:#333;font-weight:bold}
+    .copy{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--muted)}
+    @media(min-width:760px){.footer-grid{grid-template-columns:1.1fr .9fr .9fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="panel topbar">
+      <div class="brand"><h1>FAQ</h1></div>
+      <nav class="nav">
+        <a href="index.html">Start</a><a href="designs.html">Designs</a><a href="filament.html">Filament</a>
+        <a href="dateien.html">3D Dateien</a><a href="anfrage.html">Anfrage</a><a href="faq.html">FAQ</a><a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </header>
+
+    <section class="panel hero">
+      <h2>Häufige Fragen</h2>
+      <p>Hier findest du Antworten auf wichtige Fragen rund um Dateien, Materialien, Farben, Ablauf und Anfrage.</p>
+    </section>
+
+    <section class="faq-list">
+      <div class="panel faq-item"><button class="q" type="button"><span>Welche Dateien kann ich schicken?</span><span class="icon">+</span></button><div class="a">Am besten funktionieren 3MF-Dateien, alternativ auch STL. Wenn du noch keine Datei hast, kannst du mir auch ein Bild oder eine Idee schicken.</div></div>
+      <div class="panel faq-item"><button class="q" type="button"><span>Welche Materialien sind aktuell möglich?</span><span class="icon">+</span></button><div class="a">Aktuell drucke ich hauptsächlich mit PLA und PETG.</div></div>
+      <div class="panel faq-item"><button class="q" type="button"><span>Welche Farben gibt es?</span><span class="icon">+</span></button><div class="a">Die verfügbaren Farben hängen vom jeweiligen Filament ab. Eine Übersicht findest du auf der Filament-Seite. Farben können je nach Bildschirm leicht abweichen.</div></div>
+      <div class="panel faq-item"><button class="q" type="button"><span>Wie wird der Preis berechnet?</span><span class="icon">+</span></button><div class="a">Die Berechnung setzt sich aus Maschinenzeit und Materialverbrauch zusammen. Das Projekt läuft aktuell in einer privaten Pilotphase mit Unkostenbeitrag.</div></div>
+      <div class="panel faq-item"><button class="q" type="button"><span>Wie lange dauert ein Druck?</span><span class="icon">+</span></button><div class="a">Das hängt von Größe, Detailgrad und Auslastung ab.</div></div>
+      <div class="panel faq-item"><button class="q" type="button"><span>Kann ich eigene Ideen oder Wünsche anfragen?</span><span class="icon">+</span></button><div class="a">Ja, du kannst auch eigene Ideen, Bilder oder Wunschtexte schicken. Ich prüfe dann, ob und wie sich das umsetzen lässt.</div></div>
+      <div class="panel faq-item"><button class="q" type="button"><span>Kann ich eine Datei direkt auf der Webseite hochladen?</span><span class="icon">+</span></button><div class="a">Aktuell nicht direkt. Die Anfrage-Seite erstellt eine E-Mail, und die Datei kann danach manuell angehängt werden.</div></div>
+    </section>
+
+    <section class="panel bottom">
+      <h3>Noch nicht beantwortet?</h3>
+      <p>Wenn deine Frage hier nicht dabei war, kannst du direkt eine Anfrage senden oder zuerst nach geeigneten Dateien schauen.</p>
+      <div class="buttons">
+        <a class="btn" href="anfrage.html">Anfrage senden</a>
+        <a class="btn secondary" href="dateien.html">3D Dateien ansehen</a>
+      </div>
+    </section>
+
+    <footer class="panel footer">
+      <div class="footer-grid">
+        <div class="footer-box"><h5>Varian Sakura</h5><p>Kurze Antworten auf die wichtigsten Fragen rund um den Ablauf.</p></div>
+        <div class="footer-box">
+          <h5>Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html">Start</a><a href="designs.html">Designs</a><a href="filament.html">Filament</a>
+            <a href="dateien.html">3D Dateien</a><a href="anfrage.html">Anfrage</a><a href="faq.html">FAQ</a><a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+        <div class="footer-box"><h5>MakerWorld</h5><a href="https://makerworld.com/de/@VarianSakura" target="_blank" rel="noopener noreferrer">Profil ansehen</a></div>
+      </div>
+      <div class="copy">© <span id="year"></span> Varian Sakura</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent=new Date().getFullYear();
+    const items=document.querySelectorAll(".faq-item");
+    items.forEach(item=>{
+      const q=item.querySelector(".q");
+      const icon=item.querySelector(".icon");
+      q.addEventListener("click",()=>{
+        const open=item.classList.contains("open");
+        items.forEach(i=>{
+          i.classList.remove("open");
+          i.querySelector(".icon").textContent="+";
+        });
+        if(!open){
+          item.classList.add("open");
+          icon.textContent="–";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

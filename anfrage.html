@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anfrage – Varian Sakura</title>
+  <style>
+    :root{
+      --pink:#ff4da6;--pink-soft:#fff1f7;--text:#2c2c2c;--muted:#555;--glass:rgba(255,255,255,.88);
+      --line:rgba(0,0,0,.08);--shadow:0 10px 24px rgba(0,0,0,.10);--radius:18px;--max:900px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:url("assets/images/background.png") center/cover fixed}
+    .container{max-width:var(--max);margin:auto;padding:14px}
+    .panel{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+    .topbar,.hero,.box,.footer{padding:14px}
+    .brand h1{margin:0;font-size:24px}
+    .nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .nav a{padding:8px 12px;background:#fff;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:#333;font-weight:bold;font-size:14px}
+    .hero,.box{margin-top:14px}
+    h2,h3{margin:0 0 8px}
+    p{margin:0;line-height:1.6;color:var(--muted)}
+    .note{margin-top:12px;background:#fff3f8;border:1px solid #ffd0e4;padding:12px;border-radius:14px}
+    form{margin-top:14px}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    label{display:block;font-weight:bold;font-size:13px;margin-bottom:6px}
+    input,select,textarea{
+      width:100%;padding:10px 12px;border-radius:14px;border:1px solid rgba(0,0,0,.14);background:#fff
+    }
+    textarea{min-height:120px;resize:vertical}
+    .primaryFile{border:2px solid rgba(255,77,166,.28);padding:12px;border-radius:16px;background:rgba(255,255,255,.92)}
+    .inline{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}
+    .buttons{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:0;cursor:pointer;text-decoration:none;background:var(--pink);color:#fff;padding:11px 15px;border-radius:12px;font-weight:bold}
+    .btn.secondary{background:#333}
+    .footer{margin-top:18px}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .footer-box h5{margin:0 0 8px}
+    .footer-box p,.footer-box a{margin:0;line-height:1.6;color:var(--muted);text-decoration:none}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px}
+    .footer-links a{color:#333;font-weight:bold}
+    .copy{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--muted)}
+    @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1.1fr .9fr .9fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="panel topbar">
+      <div class="brand"><h1>Anfrage</h1></div>
+      <nav class="nav">
+        <a href="index.html">Start</a><a href="designs.html">Designs</a><a href="filament.html">Filament</a>
+        <a href="dateien.html">3D Dateien</a><a href="anfrage.html">Anfrage</a><a href="faq.html">FAQ</a><a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </header>
+
+    <section class="panel hero">
+      <h2>3D-Druck Anfrage</h2>
+      <p>Bitte wähle möglichst zuerst deine 3MF-Datei aus. Danach kannst du die Details ergänzen. Am Ende wird eine E-Mail an <strong>variansakura2906@gmail.com</strong> erstellt.</p>
+      <div class="note">
+        <strong>Wichtig:</strong> Anhänge können per „mailto“ nicht automatisch mitgesendet werden.
+        Bitte hänge deine Datei nach dem Öffnen deines Mailprogramms manuell an.
+      </div>
+    </section>
+
+    <section class="panel box">
+      <form id="reqForm">
+        <div class="primaryFile">
+          <label for="filepick">3MF-Datei auswählen (empfohlen)</label>
+          <input id="filepick" type="file" accept=".3mf,.stl,.zip,.rar">
+          <div class="inline">Am besten 3MF. Falls du nur STL hast: das geht auch. Mehrere Dateien bitte als ZIP.</div>
+        </div>
+
+        <div class="grid" style="margin-top:12px">
+          <div>
+            <label for="filetype">Dateiformat</label>
+            <select id="filetype">
+              <option value="3MF" selected>3MF (empfohlen)</option>
+              <option value="STL">STL</option>
+              <option value="Keins (nur Idee/Foto)">Keins (nur Idee/Foto)</option>
+            </select>
+          </div>
+          <div>
+            <label for="name">Name</label>
+            <input id="name" placeholder="Dein Name" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="contact">Kontakt (E-Mail oder WhatsApp)</label>
+            <input id="contact" placeholder="z. B. mail@... oder +49..." required>
+          </div>
+          <div>
+            <label for="qty">Menge</label>
+            <input id="qty" type="number" min="1" value="1">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="material">Material</label>
+            <select id="material" required>
+              <option value="">Bitte wählen…</option>
+              <option value="PLA">PLA</option>
+              <option value="PETG">PETG</option>
+              <option value="Weiß ich noch nicht">Weiß ich noch nicht</option>
+            </select>
+          </div>
+          <div>
+            <label for="color">Farbe</label>
+            <input id="color" placeholder="z. B. Weiß, Schwarz, Pink...">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="size">Maße / Größe</label>
+            <input id="size" placeholder="z. B. 10 cm breit oder wie Original">
+          </div>
+          <div>
+            <label for="deadline">Wunschtermin</label>
+            <input id="deadline" placeholder="optional">
+          </div>
+        </div>
+
+        <label for="details" style="margin-top:12px;display:block;font-weight:bold;font-size:13px">Beschreibung</label>
+        <textarea id="details" placeholder="Was genau soll gedruckt werden? Besonderheiten, Wünsche oder Hinweise?"></textarea>
+
+        <div class="buttons">
+          <button class="btn" type="submit">E-Mail erstellen</button>
+          <a class="btn secondary" href="dateien.html">Woher bekomme ich 3MF/STL?</a>
+        </div>
+      </form>
+    </section>
+
+    <footer class="panel footer">
+      <div class="footer-grid">
+        <div class="footer-box"><h5>Varian Sakura</h5><p>Anfrage per E-Mail mit manuellem Dateianhang.</p></div>
+        <div class="footer-box">
+          <h5>Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html">Start</a><a href="designs.html">Designs</a><a href="filament.html">Filament</a>
+            <a href="dateien.html">3D Dateien</a><a href="anfrage.html">Anfrage</a><a href="faq.html">FAQ</a><a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+        <div class="footer-box"><h5>MakerWorld</h5><a href="https://makerworld.com/de/@VarianSakura" target="_blank" rel="noopener noreferrer">Profil ansehen</a></div>
+      </div>
+      <div class="copy">© <span id="year"></span> Varian Sakura</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent=new Date().getFullYear();
+    const TARGET_EMAIL="variansakura2906@gmail.com";
+    document.getElementById("reqForm").addEventListener("submit",(e)=>{
+      e.preventDefault();
+      const name=document.getElementById("name").value.trim();
+      const contact=document.getElementById("contact").value.trim();
+      const filetype=document.getElementById("filetype").value;
+      const filepick=document.getElementById("filepick").files[0];
+      const material=document.getElementById("material").value;
+      const color=document.getElementById("color").value.trim();
+      const size=document.getElementById("size").value.trim();
+      const qty=document.getElementById("qty").value;
+      const deadline=document.getElementById("deadline").value.trim();
+      const details=document.getElementById("details").value.trim();
+
+      const fileLine=filepick?`Ausgewählte Datei: ${filepick.name} (bitte manuell anhängen)`:`Ausgewählte Datei: (keine ausgewählt)`;
+      const body=`Hallo Varian Sakura,
+
+ich möchte eine 3D-Druck Anfrage stellen:
+
+Name: ${name}
+Kontakt: ${contact}
+
+Dateiformat: ${filetype}
+${fileLine}
+
+Material: ${material}
+Farbe: ${color || "-"}
+Maße/Größe: ${size || "-"}
+Menge: ${qty || "1"}
+Wunschtermin: ${deadline || "-"}
+
+Beschreibung:
+${details || "-"}
+
+Hinweis:
+Bitte die 3MF/STL Datei manuell als Anhang hinzufügen.
+
+Viele Grüße
+${name}`.trim();
+
+      const mailto=`mailto:${TARGET_EMAIL}?subject=${encodeURIComponent("3D-Druck Anfrage – Varian Sakura")}&body=${encodeURIComponent(body)}`;
+      window.location.href=mailto;
+    });
+  </script>
+</body>
+</html>

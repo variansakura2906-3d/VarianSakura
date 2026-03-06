@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eigene Designs – Varian Sakura</title>
+
+<style>
+:root{
+  --pink:#ff4da6;
+  --pinkSoft:rgba(255,77,166,.10);
+  --glass:rgba(255,255,255,.86);
+  --line:rgba(0,0,0,.08);
+  --radius:18px;
+  --shadow:0 14px 34px rgba(0,0,0,.16);
+  --shadow2:0 10px 24px rgba(0,0,0,.12);
+  --max:1150px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background-image:url("assets/images/background.png");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:#2b2b2b;
+}
+
+.container{
+  max-width:var(--max);
+  margin:auto;
+  padding:18px;
+}
+
+/* Header */
+.header{
+  background:var(--glass);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow2);
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  backdrop-filter: blur(8px);
+}
+
+.header h2{margin:0; font-size:20px;}
+
+nav a{
+  margin-left:14px;
+  text-decoration:none;
+  font-weight:800;
+  color:#333;
+  padding:8px 10px;
+  border-radius:12px;
+  transition:.18s;
+}
+nav a:hover{ background:var(--pinkSoft); }
+
+.hero{
+  margin-top:16px;
+  background:var(--glass);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow2);
+  padding:18px;
+  backdrop-filter: blur(8px);
+}
+
+.hero h1{margin:0 0 8px; font-size:24px;}
+.hero p{margin:0; line-height:1.55;}
+
+.chips{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.chip{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,77,166,.25);
+  background:var(--pinkSoft);
+  color:#c2185b;
+  font-weight:900;
+  font-size:13px;
+  text-decoration:none;
+  transition:.18s;
+}
+.chip:hover{ transform:translateY(-2px); }
+
+/* Collection sections */
+.collection{
+  margin-top:18px;
+  background:var(--glass);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow2);
+  padding:16px;
+  backdrop-filter: blur(8px);
+}
+
+.collectionHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(0,0,0,.07);
+  padding-bottom:10px;
+  margin-bottom:14px;
+}
+
+.collectionHead h3{
+  margin:0;
+  font-size:18px;
+}
+
+.collectionHead .hint{
+  font-size:13px;
+  opacity:.9;
+}
+
+/* Cards grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+}
+
+@media (max-width:1000px){
+  .grid{ grid-template-columns:1fr; }
+}
+
+.card{
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 22px rgba(0,0,0,.10);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow:0 18px 44px rgba(0,0,0,.18);
+}
+
+.cardImg{
+  height:210px;
+  background:#fff;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.cardImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transition: transform .22s ease;
+}
+.card:hover .cardImg img{ transform:scale(1.03); }
+
+.cardBody{ padding:12px; }
+.cardBody h4{ margin:0 0 6px; font-size:16px; }
+.cardBody p{ margin:0; font-size:14px; line-height:1.4; color:#444; }
+
+.cardActions{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  font-weight:900;
+  padding:10px 12px;
+  border-radius:14px;
+  color:#fff;
+  background:linear-gradient(135deg, var(--pink), #ff5aa5);
+  box-shadow:0 12px 22px rgba(255,77,166,.25);
+  transition:.18s;
+  font-size:13px;
+}
+.btn:hover{ transform:translateY(-2px); }
+
+.btn.secondary{
+  background:linear-gradient(135deg, #444, #222);
+  box-shadow:0 12px 22px rgba(0,0,0,.18);
+}
+
+.footer{
+  margin:18px 0 8px;
+  text-align:center;
+  font-size:12px;
+  color:#fff;
+  opacity:.92;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <h2>Eigene Designs</h2>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="filament.html">Filament</a>
+      <a href="dateien.html">3D Dateien</a>
+      <a href="unkosten.html">Pilotphase</a>
+      <a href="anfrage.html">Anfrage</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <h1>Collections</h1>
+    <p>
+      Hier findest du meine eigenen Design-Collections. Viele Designs sind personalisierbar.
+      Wenn du etwas Ähnliches möchtest, kannst du jederzeit eine Anfrage senden.
+    </p>
+
+    <!-- Schnell-Navigation zu den Collections -->
+    <div class="chips">
+      <a class="chip" href="#heartbox">Herzbox Collection</a>
+      <!-- Später: Weitere Collections als Chip hinzufügen -->
+      <!-- <a class="chip" href="#keychains">Schlüsselanhänger</a> -->
+      <!-- <a class="chip" href="#gadgets">Gadgets</a> -->
+    </div>
+  </div>
+
+  <!-- ===== Collection 1: Herzbox ===== -->
+  <section class="collection" id="heartbox">
+    <div class="collectionHead">
+      <div>
+        <h3>Herzbox Collection</h3>
+        <div class="hint">Personalisierbare LED-Herzboxen · ideal als Geschenk</div>
+      </div>
+      <div class="hint">Bildmaterial: assets/images/designs/heartbox/…</div>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="cardImg">
+          <img src="assets/images/designs/heartbox/heart-baby.png" alt="Baby Herzbox">
+        </div>
+        <div class="cardBody">
+          <h4>Baby Herz</h4>
+          <p>LED Herzbox mit Babyfüßen – perfekt zur Geburt oder Taufe.</p>
+          <div class="cardActions">
+            <a class="btn" href="anfrage.html">Anfragen</a>
+            <a class="btn secondary" href="anfrage.html">Text personalisieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cardImg">
+          <img src="assets/images/designs/heartbox/heart-mom.png" alt="Mom Herzbox">
+        </div>
+        <div class="cardBody">
+          <h4>Mom Herz</h4>
+          <p>Personalisierbare Geschenkidee für Muttertag.</p>
+          <div class="cardActions">
+            <a class="btn" href="anfrage.html">Anfragen</a>
+            <a class="btn secondary" href="anfrage.html">Text personalisieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cardImg">
+          <img src="assets/images/designs/heartbox/heart-dad.png" alt="Dad Herzbox">
+        </div>
+        <div class="cardBody">
+          <h4>Dad Herz</h4>
+          <p>Stilvolle LED Herzbox als Geschenk für Väter.</p>
+          <div class="cardActions">
+            <a class="btn" href="anfrage.html">Anfragen</a>
+            <a class="btn secondary" href="anfrage.html">Text personalisieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cardImg">
+          <img src="assets/images/designs/heartbox/heart-iloveyou.png" alt="I Love You Herzbox">
+        </div>
+        <div class="cardBody">
+          <h4>I Love You</h4>
+          <p>Romantische Herzbox – ideal für Jahrestag/Valentinstag.</p>
+          <div class="cardActions">
+            <a class="btn" href="anfrage.html">Anfragen</a>
+            <a class="btn secondary" href="anfrage.html">Text personalisieren</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cardImg">
+          <img src="assets/images/designs/heartbox/heart-love.png" alt="LOVE Herzbox">
+        </div>
+        <div class="cardBody">
+          <h4>LOVE</h4>
+          <p>Moderne LOVE Herzbox – clean und dekorativ.</p>
+          <div class="cardActions">
+            <a class="btn" href="anfrage.html">Anfragen</a>
+            <a class="btn secondary" href="anfrage.html">Text personalisieren</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Vorlage für weitere Collections =====
+  <section class="collection" id="keychains">
+    <div class="collectionHead">
+      <div>
+        <h3>Schlüsselanhänger Collection</h3>
+        <div class="hint">Kurzbeschreibung…</div>
+      </div>
+      <div class="hint">Bildmaterial: assets/images/designs/keychains/…</div>
+    </div>
+
+    <div class="grid">
+      (cards…)
+    </div>
+  </section>
+  -->
+
+  <div class="footer">© <span id="y"></span> Varian Sakura · Eigene Designs</div>
+
+</div>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
