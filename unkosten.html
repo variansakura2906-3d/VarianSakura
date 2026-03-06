@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilotphase & Aufwandsübersicht – Varian Sakura</title>
+  <style>
+    :root{
+      --pink:#ff4da6;
+      --pink-soft:#fff1f7;
+      --text:#2c2c2c;
+      --muted:#555;
+      --glass:rgba(255,255,255,.88);
+      --line:rgba(0,0,0,.08);
+      --shadow:0 10px 24px rgba(0,0,0,.10);
+      --radius:18px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:url("assets/images/background.png") center/cover fixed;
+    }
+    .container{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px;
+    }
+    .panel{
+      background:var(--glass);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+    .topbar,.hero,.section,.footer{
+      padding:14px;
+    }
+    .brand h1{
+      margin:0;
+      font-size:24px;
+    }
+    .nav{
+      margin-top:12px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .nav a{
+      padding:8px 12px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      text-decoration:none;
+      color:#333;
+      font-weight:bold;
+      font-size:14px;
+    }
+    .hero,.section{
+      margin-top:14px;
+    }
+    h2,h3{
+      margin:0 0 8px;
+    }
+    p{
+      margin:0;
+      line-height:1.65;
+      color:var(--muted);
+    }
+    .highlight{
+      margin-top:14px;
+      background:#fff3f8;
+      border:1px solid #ffd0e4;
+      border-radius:16px;
+      padding:14px;
+      line-height:1.6;
+    }
+    .highlight strong{
+      color:#c2185b;
+    }
+    .price-box{
+      margin-top:16px;
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+    }
+    .price-label{
+      font-size:18px;
+      color:#666;
+      font-weight:bold;
+    }
+    .price-value{
+      margin-top:8px;
+      font-size:38px;
+      color:#c2185b;
+      font-weight:bold;
+    }
+    .price-sub{
+      margin-top:8px;
+      font-size:14px;
+      line-height:1.55;
+      color:var(--muted);
+    }
+    .cost-list{
+      margin-top:16px;
+      display:grid;
+      gap:12px;
+    }
+    .cost-item{
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+    .cost-head{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:8px;
+    }
+    .cost-head strong{
+      font-size:17px;
+      color:#333;
+    }
+    .cost-price{
+      color:#c2185b;
+      font-weight:bold;
+      white-space:nowrap;
+    }
+    .note-box{
+      margin-top:16px;
+      background:#fff3f8;
+      border:1px solid #ffd0e4;
+      border-radius:16px;
+      padding:14px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+    .note-box strong{
+      color:#c2185b;
+    }
+    .footer{
+      margin-top:18px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    .footer-box h5{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+    .footer-box p,
+    .footer-box a{
+      margin:0;
+      line-height:1.6;
+      color:var(--muted);
+      text-decoration:none;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .footer-links a{
+      color:#333;
+      font-weight:bold;
+    }
+    .copy{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+      text-align:center;
+      font-size:12px;
+      color:var(--muted);
+    }
+    @media(min-width:760px){
+      .footer-grid{
+        grid-template-columns:1.1fr .9fr .9fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="panel topbar">
+      <div class="brand">
+        <h1>Pilotphase & Aufwandsübersicht</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Start</a>
+        <a href="designs.html">Designs</a>
+        <a href="filament.html">Filament</a>
+        <a href="dateien.html">3D Dateien</a>
+        <a href="anfrage.html">Anfrage</a>
+        <a href="faq.html">FAQ</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </header>
+
+    <section class="panel hero">
+      <h2>Werde Teil der Pilotphase</h2>
+      <p>
+        Bevor ich den nächsten Schritt gehe, möchte ich mein Konzept auf Herz und Nieren prüfen.
+        Deshalb biete ich meine Arbeiten aktuell im Rahmen einer privaten Initiative an.
+      </p>
+
+      <div class="highlight">
+        <strong>Gut geeignet, wenn…</strong><br>
+        du ein Projekt testen möchtest, ein einzelnes Teil brauchst oder einfach Lust hast,
+        in dieser Pilotphase dabei zu sein. Ziel ist es, Abläufe, Qualität und Aufwand realistisch zu prüfen.
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h3>Zusammensetzung des Unkostenbeitrags</h3>
+      <p>
+        Da es sich derzeit um eine private Testphase handelt, wird kein klassischer Verkauf angeboten.
+        Stattdessen wird ein durchschnittlicher Unkostenbeitrag angesetzt, der einen Teil der laufenden
+        Aufwendungen rund um Druck, Vorbereitung, Pflege und Technik abdeckt.
+      </p>
+
+      <div class="price-box">
+        <div class="price-label">Durchschnittlicher Aufwand pro Druckstunde</div>
+        <div class="price-value">2,89 €</div>
+        <div class="price-sub">
+          als Orientierungswert für Technik, Vorbereitung, Verschleiß, AMS und Trocknung<br>
+          <strong>ohne Filamentmaterial</strong>
+        </div>
+      </div>
+
+      <div class="cost-list">
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Maschinennutzung</strong>
+            <span class="cost-price">1,05 €</span>
+          </div>
+          <p>
+            Der größte Anteil entsteht durch die reine Nutzung des Druckers selbst.
+            Dazu zählt die laufende Beanspruchung der Technik, die allgemeine Abnutzung
+            sowie der langfristige Verschleiß durch regelmäßigen Einsatz.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Stromverbrauch des Druckers</strong>
+            <span class="cost-price">0,18 €</span>
+          </div>
+          <p>
+            Während eines Druckvorgangs verbraucht der Drucker kontinuierlich Strom für
+            Heizbett, Hotend, Elektronik, Lüfter und Bewegungsachsen. Besonders bei
+            längeren Drucken summiert sich dieser Energiebedarf.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Wartung & Pflege</strong>
+            <span class="cost-price">0,28 €</span>
+          </div>
+          <p>
+            Damit dauerhaft saubere Ergebnisse erreicht werden, sind regelmäßige Reinigungen,
+            Schmierung beweglicher Teile, Kontrollen sowie kleine Pflegearbeiten notwendig.
+            Diese laufende Instandhaltung gehört zum realen Aufwand.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Verschleißteile</strong>
+            <span class="cost-price">0,34 €</span>
+          </div>
+          <p>
+            Bestimmte Teile müssen im Laufe der Zeit ersetzt werden. Dazu gehören unter anderem
+            Düse, Druckplatte, PTFE-Komponenten und weitere mechanisch beanspruchte Teile.
+            Diese Position berücksichtigt die anteilige Erneuerung solcher Bauteile.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Druckvorbereitung & Einrichtung</strong>
+            <span class="cost-price">0,24 €</span>
+          </div>
+          <p>
+            Vor dem eigentlichen Druck müssen Modelle geprüft, Druckeinstellungen vorbereitet,
+            Größen kontrolliert und Materialfragen geklärt werden. Auch diese Vorbereitungszeit
+            gehört zum tatsächlichen Gesamtaufwand.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Testdrucke & Fehldrucke</strong>
+            <span class="cost-price">0,20 €</span>
+          </div>
+          <p>
+            Nicht jeder Druck gelingt sofort perfekt. Je nach Modell können Testläufe,
+            Anpassungen oder kleinere Fehldrucke notwendig sein, um ein sauberes Ergebnis
+            zu erzielen. Diese Erfahrungs- und Prüfphase wird hier anteilig berücksichtigt.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>AMS-System</strong>
+            <span class="cost-price">0,20 €</span>
+          </div>
+          <p>
+            Das AMS übernimmt Materialzufuhr und Filamentwechsel. Auch dieses System ist Teil
+            des technischen Aufwands und unterliegt Verschleiß, zusätzlicher Nutzung und Pflege.
+            Besonders bei mehreren Materialien oder Farben steigt hier der technische Aufwand.
+          </p>
+        </div>
+
+        <div class="cost-item">
+          <div class="cost-head">
+            <strong>Filamenttrocknung</strong>
+            <span class="cost-price">0,20 €</span>
+          </div>
+          <p>
+            Für gute Druckergebnisse muss Filament häufig vorab getrocknet werden.
+            In vielen Fällen läuft dieser Vorbereitungsschritt etwa <strong>6 Stunden</strong>,
+            bevor überhaupt gedruckt werden kann. Dabei entstehen zusätzlicher Stromverbrauch
+            und vorbereitender Aufwand.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="note-box">
+        <strong>Wichtiger Hinweis:</strong><br><br>
+        Der Wert von <strong>2,89 € pro Druckstunde</strong> ist ein durchschnittlicher
+        Orientierungswert für den technischen und organisatorischen Aufwand.<br><br>
+        Das <strong>Filament selbst ist in dieser Berechnung nicht enthalten</strong> und wird
+        je nach Materialtyp, Farbe und tatsächlicher Menge separat berücksichtigt.
+      </div>
+    </section>
+
+    <footer class="panel footer">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h5>Varian Sakura</h5>
+          <p>Private Testphase mit transparentem Ansatz, ehrlichem Feedback und nachvollziehbarer Aufwandsdarstellung.</p>
+        </div>
+        <div class="footer-box">
+          <h5>Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html">Start</a>
+            <a href="designs.html">Designs</a>
+            <a href="filament.html">Filament</a>
+            <a href="dateien.html">3D Dateien</a>
+            <a href="anfrage.html">Anfrage</a>
+            <a href="faq.html">FAQ</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+        <div class="footer-box">
+          <h5>MakerWorld</h5>
+          <a href="https://makerworld.com/de/@VarianSakura" target="_blank" rel="noopener noreferrer">Profil ansehen</a>
+        </div>
+      </div>
+      <div class="copy">© <span id="year"></span> Varian Sakura</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
