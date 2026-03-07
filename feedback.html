@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback – Varian Sakura</title>
+
+  <style>
+    :root{
+      --pink:#ff4da6;
+      --pink-soft:#fff1f7;
+      --text:#2c2c2c;
+      --muted:#555;
+      --glass:rgba(255,255,255,.88);
+      --line:rgba(0,0,0,.08);
+      --shadow:0 10px 24px rgba(0,0,0,.10);
+      --radius:18px;
+      --max:900px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:url("assets/images/background.png") center/cover fixed;
+    }
+
+    .container{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px;
+    }
+
+    .panel{
+      background:var(--glass);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+
+    .topbar,
+    .hero,
+    .form-box,
+    footer{
+      padding:14px;
+    }
+
+    .topbar{
+      margin-bottom:14px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:24px;
+    }
+
+    .nav{
+      margin-top:12px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:#333;
+      font-weight:bold;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      font-size:14px;
+    }
+
+    .hero h2{
+      margin:0 0 8px;
+      font-size:28px;
+      line-height:1.15;
+    }
+
+    .hero p{
+      margin:0;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .form-box{
+      margin-top:14px;
+    }
+
+    form{
+      margin-top:10px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    label{
+      display:block;
+      font-weight:bold;
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.14);
+      background:#fff;
+      font-family:inherit;
+      font-size:14px;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .note{
+      margin-top:14px;
+      background:#fff3f8;
+      border:1px solid #ffd0e4;
+      border-radius:14px;
+      padding:14px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .checkbox{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .checkbox input{
+      width:auto;
+      margin-top:2px;
+    }
+
+    .buttons{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:0;
+      cursor:pointer;
+      text-decoration:none;
+      background:var(--pink);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    .btn.secondary{
+      background:#333;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .footer-box h5{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+
+    .footer-box p,
+    .footer-box a{
+      margin:0;
+      line-height:1.6;
+      color:var(--muted);
+      text-decoration:none;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .footer-links a{
+      color:#333;
+      font-weight:bold;
+    }
+
+    .copyright{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    @media(min-width:760px){
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1.1fr .9fr .9fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="panel topbar">
+      <div class="brand">
+        <h1>Feedback</h1>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Start</a>
+        <a href="designs.html">Designs</a>
+        <a href="filament.html">Filament</a>
+        <a href="dateien.html">3D Dateien</a>
+        <a href="anfrage.html">Anfrage</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="faq.html">FAQ</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </header>
+
+    <section class="panel hero">
+      <h2>Feedback zur Pilotphase</h2>
+      <p>
+        Ich freue mich sehr über ehrliche Rückmeldungen zu Qualität, Ablauf und Design.
+        Dein Feedback hilft mir dabei, meine Arbeit und den gesamten Ablauf weiter zu verbessern.
+      </p>
+    </section>
+
+    <section class="panel form-box">
+      <form id="feedbackForm">
+        <div class="grid">
+          <div>
+            <label for="name">Name oder Vorname (optional)</label>
+            <input id="name" placeholder="z. B. Anna">
+          </div>
+
+          <div>
+            <label for="contact">Kontakt (optional)</label>
+            <input id="contact" placeholder="z. B. E-Mail oder WhatsApp">
+          </div>
+        </div>
+
+        <div class="grid" style="margin-top:12px;">
+          <div>
+            <label for="project">Worum ging es?</label>
+            <input id="project" placeholder="z. B. Herzbox, Namensdesign, Vase">
+          </div>
+
+          <div>
+            <label for="rating">Wie zufrieden warst du?</label>
+            <select id="rating">
+              <option value="Sehr zufrieden">Sehr zufrieden</option>
+              <option value="Zufrieden">Zufrieden</option>
+              <option value="In Ordnung">In Ordnung</option>
+              <option value="Verbesserungsfähig">Verbesserungsfähig</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label for="liked">Was hat dir besonders gefallen?</label>
+          <textarea id="liked" placeholder="z. B. das Design, die Kommunikation oder die Druckqualität"></textarea>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label for="improve">Was könnte ich verbessern?</label>
+          <textarea id="improve" placeholder="Optional"></textarea>
+        </div>
+
+        <div style="margin-top:12px;">
+          <label for="quote">Kurze Rückmeldung für die Website (optional)</label>
+          <textarea id="quote" placeholder="z. B. Sehr sauber gedruckt und schön umgesetzt."></textarea>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="publishOk">
+          <label for="publishOk" style="margin:0;font-weight:normal;">
+            Ich bin damit einverstanden, dass meine Rückmeldung anonym oder mit Vornamen
+            auf der Website gezeigt werden darf.
+          </label>
+        </div>
+
+        <div class="note">
+          Dein Feedback wird über dein Mailprogramm versendet. Es wird nicht direkt auf dieser Website gespeichert.
+        </div>
+
+        <div class="buttons">
+          <button class="btn" type="submit">Feedback senden</button>
+          <a class="btn secondary" href="index.html">Zurück zur Startseite</a>
+        </div>
+      </form>
+    </section>
+
+    <footer class="panel">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h5>Varian Sakura</h5>
+          <p>Feedback hilft mir, Qualität, Ablauf und Designs weiter zu verbessern.</p>
+        </div>
+
+        <div class="footer-box">
+          <h5>Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html">Start</a>
+            <a href="designs.html">Designs</a>
+            <a href="filament.html">Filament</a>
+            <a href="dateien.html">3D Dateien</a>
+            <a href="anfrage.html">Anfrage</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="faq.html">FAQ</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+
+        <div class="footer-box">
+          <h5>MakerWorld</h5>
+          <a href="https://makerworld.com/de/@VarianSakura" target="_blank" rel="noopener noreferrer">
+            Profil ansehen
+          </a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> Varian Sakura
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const TARGET_EMAIL = "variansakura2906@gmail.com";
+
+    document.getElementById("feedbackForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const project = document.getElementById("project").value.trim();
+      const rating = document.getElementById("rating").value;
+      const liked = document.getElementById("liked").value.trim();
+      const improve = document.getElementById("improve").value.trim();
+      const quote = document.getElementById("quote").value.trim();
+      const publishOk = document.getElementById("publishOk").checked ? "Ja" : "Nein";
+
+      const subject = "Feedback zur Pilotphase – Varian Sakura";
+
+      const body = `Hallo Varian Sakura,
+
+ich möchte Feedback zur Pilotphase geben:
+
+Name / Vorname: ${name || "-"}
+Kontakt: ${contact || "-"}
+Projekt: ${project || "-"}
+Zufriedenheit: ${rating}
+
+Was hat mir gefallen:
+${liked || "-"}
+
+Was könnte verbessert werden:
+${improve || "-"}
+
+Kurze Rückmeldung für die Website:
+${quote || "-"}
+
+Darf auf der Website gezeigt werden:
+${publishOk}
+
+Viele Grüße
+${name || "Anonym"}`.trim();
+
+      const mailto = `mailto:${TARGET_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  </script>
+
+</body>
+</html>
