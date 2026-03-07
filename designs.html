@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eigene Designs – Varian Sakura</title>
+
+<style>
+:root{
+--pink:#ff4da6;
+--pink-soft:#fff1f7;
+--text:#2c2c2c;
+--muted:#555;
+--glass:rgba(255,255,255,.88);
+--line:rgba(0,0,0,.08);
+--shadow:0 10px 24px rgba(0,0,0,.10);
+--radius:18px;
+--max:1100px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:var(--text);
+background-image:url("assets/images/background.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.container{
+max-width:var(--max);
+margin:auto;
+padding:14px;
+}
+
+.panel{
+background:var(--glass);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+backdrop-filter:blur(8px);
+}
+
+.topbar{
+padding:14px;
+}
+
+.brand h1{
+margin:0;
+font-size:24px;
+}
+
+.nav{
+margin-top:12px;
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.nav a{
+text-decoration:none;
+color:#333;
+font-weight:bold;
+padding:8px 12px;
+border-radius:999px;
+background:#fff;
+border:1px solid var(--line);
+font-size:14px;
+}
+
+.hero{
+margin-top:14px;
+padding:18px;
+}
+
+.hero h2{
+margin:0 0 8px;
+font-size:28px;
+line-height:1.15;
+}
+
+.hero p{
+margin:0;
+line-height:1.6;
+color:var(--muted);
+}
+
+.maker-box{
+margin-top:14px;
+padding:16px;
+}
+
+.maker-box h3{
+margin:0 0 8px;
+font-size:20px;
+}
+
+.maker-box p{
+margin:0;
+line-height:1.6;
+color:var(--muted);
+}
+
+.btn{
+display:inline-block;
+margin-top:12px;
+text-decoration:none;
+background:var(--pink);
+color:#fff;
+padding:10px 14px;
+border-radius:12px;
+font-weight:bold;
+font-size:14px;
+}
+
+.accordion-list{
+margin-top:16px;
+display:grid;
+gap:16px;
+}
+
+.collection{
+overflow:hidden;
+}
+
+.collection-toggle{
+width:100%;
+border:0;
+background:transparent;
+padding:0;
+cursor:pointer;
+text-align:left;
+}
+
+.collection-cover{
+display:grid;
+grid-template-columns:1fr;
+}
+
+.cover-image img{
+width:100%;
+height:240px;
+object-fit:cover;
+object-position:center;
+display:block;
+background:#fff;
+}
+
+.cover-text{
+padding:16px;
+}
+
+.cover-text h3{
+margin:0 0 8px;
+font-size:22px;
+}
+
+.cover-text p{
+margin:0;
+line-height:1.55;
+color:var(--muted);
+}
+
+.collection-hint{
+margin-top:12px;
+display:inline-block;
+padding:8px 12px;
+border-radius:999px;
+background:var(--pink-soft);
+color:#c2185b;
+font-weight:bold;
+font-size:13px;
+}
+
+.collection-content{
+display:none;
+padding:16px;
+border-top:1px solid var(--line);
+}
+
+.collection.open .collection-content{
+display:block;
+}
+
+.cards{
+display:grid;
+grid-template-columns:1fr;
+gap:14px;
+}
+
+.card{
+background:rgba(255,255,255,.92);
+border:1px solid var(--line);
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.image-switch{
+position:relative;
+width:100%;
+height:260px;
+overflow:hidden;
+background:#fff;
+cursor:pointer;
+}
+
+.image-switch img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+display:block;
+background:#fff;
+}
+
+.tap-hint{
+position:absolute;
+right:10px;
+top:10px;
+background:rgba(255,255,255,.84);
+border:1px solid var(--line);
+color:#444;
+font-size:11px;
+font-weight:bold;
+padding:6px 8px;
+border-radius:999px;
+}
+
+.switch-dots{
+position:absolute;
+left:50%;
+bottom:10px;
+transform:translateX(-50%);
+display:flex;
+gap:6px;
+padding:6px 8px;
+border-radius:999px;
+background:rgba(255,255,255,.75);
+border:1px solid var(--line);
+}
+
+.switch-dot{
+width:8px;
+height:8px;
+border-radius:999px;
+background:#d7d7d7;
+}
+
+.switch-dot.active{
+background:var(--pink);
+}
+
+.card-body{
+padding:14px;
+}
+
+.card-body h4{
+margin:0 0 8px;
+font-size:18px;
+}
+
+.card-body p{
+margin:0;
+line-height:1.55;
+color:var(--muted);
+}
+
+.card-buttons{
+margin-top:12px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.mini-info{
+margin-top:12px;
+background:rgba(255,255,255,.85);
+border:1px solid var(--line);
+border-radius:12px;
+padding:10px 12px;
+}
+
+.mini-info summary{
+cursor:pointer;
+font-weight:bold;
+color:#c2185b;
+list-style:none;
+}
+
+.mini-info summary::-webkit-details-marker{
+display:none;
+}
+
+.mini-info p{
+margin-top:10px;
+line-height:1.5;
+color:var(--muted);
+}
+
+footer{
+margin-top:18px;
+padding:18px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:14px;
+}
+
+.footer-box h5{
+margin:0 0 8px;
+font-size:16px;
+}
+
+.footer-box p,
+.footer-box a{
+margin:0;
+line-height:1.6;
+color:var(--muted);
+text-decoration:none;
+}
+
+.footer-links{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.footer-links a{
+color:#333;
+font-weight:bold;
+}
+
+.copy{
+margin-top:12px;
+padding-top:12px;
+border-top:1px solid var(--line);
+text-align:center;
+font-size:12px;
+color:var(--muted);
+}
+
+@media (min-width:760px){
+.collection-cover{
+grid-template-columns:340px 1fr;
+}
+
+.cover-image img{
+height:100%;
+min-height:240px;
+}
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+grid-template-columns:1.1fr .9fr .9fr;
+}
+}
+
+@media (min-width:1020px){
+.cards{
+grid-template-columns:repeat(3,1fr);
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header class="panel topbar">
+<div class="brand">
+<h1>Eigene Designs</h1>
+</div>
+
+<nav class="nav">
+<a href="index.html">Start</a>
+<a href="designs.html">Designs</a>
+<a href="filament.html">Filament</a>
+<a href="dateien.html">3D Dateien</a>
+<a href="anfrage.html">Anfrage</a>
+<a href="faq.html">FAQ</a>
+<a href="datenschutz.html">Datenschutz</a>
+</nav>
+</header>
+
+<section class="panel hero">
+<h2>Eigene Designs & Collections</h2>
+<p>
+Hier findest du meine eigenen Designserien und individuelle Projekte.
+Einige Modelle sind personalisierbar und können auf Anfrage angepasst werden.
+</p>
+</section>
+
+<section class="panel maker-box">
+<h3>Weitere Modelle auf MakerWorld</h3>
+<p>
+Zusätzliche Ideen und Modelle findest du auch auf meinem MakerWorld Profil.
+</p>
+<a class="btn" href="https://makerworld.com/de/@VarianSakura" target="_blank" rel="noopener noreferrer">
+MakerWorld öffnen
+</a>
+</section>
+
+<section class="accordion-list">
+
+<!-- Herzbox Collection -->
+<div class="panel collection">
+<button class="collection-toggle" type="button">
+<div class="collection-cover">
+<div class="cover-image">
+<img src="assets/images/designs/heartbox/cover.jpg" alt="Herzbox Collection">
+</div>
+<div class="cover-text">
+<h3>Herzbox Collection</h3>
+<p>
+Emotionale LED- und Herzdesigns als Geschenk für Familie, Partner oder besondere Anlässe.
+Viele Varianten sind personalisierbar.
+</p>
+<span class="collection-hint">Collection öffnen</span>
+</div>
+</div>
+</button>
+
+<div class="collection-content">
+<div class="cards">
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/heartbox/heart-mom.jpg" alt="Mom Herzbox">
+</div>
+<div class="card-body">
+<h4>Mom</h4>
+<p>Personalisierte Herzbox als liebevolle Geschenkidee für Muttertag oder besondere Momente.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/heartbox/heart-dad.jpg" alt="Dad Herzbox">
+</div>
+<div class="card-body">
+<h4>Dad</h4>
+<p>Eine passende Geschenkidee für Väter mit dekorativem Herzdesign.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/heartbox/heart-mama.jpg" alt="Mama Herzbox">
+</div>
+<div class="card-body">
+<h4>Mama</h4>
+<p>Sanftes Herzdesign mit persönlicher Wirkung – ideal für Familie und Geschenke.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/heartbox/heart-papa.jpg" alt="Papa Herzbox">
+</div>
+<div class="card-body">
+<h4>Papa</h4>
+<p>Herzbox im familiären Stil – dekorativ und emotional zugleich.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/heartbox/heart-love.jpg" alt="Love Herzbox">
+</div>
+<div class="card-body">
+<h4>Love</h4>
+<p>Romantisches Design für Jahrestag, Valentinstag oder als persönliche Dekoration.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/heartbox/heart-babyfeet.jpg" alt="Babyfüße Herzbox">
+</div>
+<div class="card-body">
+<h4>Babyfüße</h4>
+<p>Ein süßes Design zur Geburt, Taufe oder als Erinnerung für das Kinderzimmer.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Namensdesigns -->
+<div class="panel collection">
+<button class="collection-toggle" type="button">
+<div class="collection-cover">
+<div class="cover-image">
+<img src="assets/images/designs/names/cover.jpg" alt="Namensdesigns Collection">
+</div>
+<div class="cover-text">
+<h3>Namensdesigns Collection</h3>
+<p>
+Personalisierte Namensdesigns als Dekoration oder Geschenk.
+Einige Varianten sind beleuchtet und erzeugen eine besondere Wirkung.
+</p>
+<span class="collection-hint">Collection öffnen</span>
+</div>
+</div>
+</button>
+
+<div class="collection-content">
+<div class="cards">
+
+<div class="card">
+<div class="image-switch"
+data-images="assets/images/designs/names/name-valentina-light-1.jpg,assets/images/designs/names/name-valentina-light-2.jpg">
+<img src="assets/images/designs/names/name-valentina-light-1.jpg" alt="Valentina">
+<div class="tap-hint">Tippen</div>
+<div class="switch-dots">
+<span class="switch-dot active"></span>
+<span class="switch-dot"></span>
+</div>
+</div>
+<div class="card-body">
+<h4>Valentina – beleuchtet</h4>
+<p>Großes Namensdesign mit leuchtendem Schriftzug und dekorativer Wirkung.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch"
+data-images="assets/images/designs/names/name-emma-light-1.jpg,assets/images/designs/names/name-emma-light-2.jpg">
+<img src="assets/images/designs/names/name-emma-light-1.jpg" alt="Emma">
+<div class="tap-hint">Tippen</div>
+<div class="switch-dots">
+<span class="switch-dot active"></span>
+<span class="switch-dot"></span>
+</div>
+</div>
+<div class="card-body">
+<h4>Emma – beleuchtet</h4>
+<p>Großes Namensdesign mit leuchtendem Schriftzug und dekorativer Wirkung.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch"
+data-images="assets/images/designs/names/name-elias-light-1.jpg,assets/images/designs/names/name-elias-light-2.jpg">
+<img src="assets/images/designs/names/name-elias-light-1.jpg" alt="Elias">
+<div class="tap-hint">Tippen</div>
+<div class="switch-dots">
+<span class="switch-dot active"></span>
+<span class="switch-dot"></span>
+</div>
+</div>
+<div class="card-body">
+<h4>Elias – beleuchtet</h4>
+<p>Beleuchteter Namensaufsteller mit verspieltem Detail und indirektem Licht.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/names/name-dajana.jpg" alt="Dajana">
+</div>
+<div class="card-body">
+<h4>Dajana</h4>
+<p>Personalisierter Buchstabenaufsteller mit klarem, modernem Look.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch"
+data-images="assets/images/designs/names/name-natascha-1.jpg,assets/images/designs/names/name-natascha-2.jpg">
+<img src="assets/images/designs/names/name-natascha-1.jpg" alt="Natascha">
+<div class="tap-hint">Tippen</div>
+<div class="switch-dots">
+<span class="switch-dot active"></span>
+<span class="switch-dot"></span>
+</div>
+</div>
+<div class="card-body">
+<h4>Natascha</h4>
+<p>Großer Buchstabenaufsteller mit integriertem Namensschriftzug.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/names/name-elie.jpg" alt="Elie">
+</div>
+<div class="card-body">
+<h4>Elie</h4>
+<p>Schlichtes, freundliches Namensdesign für Kinderzimmer oder Geschenkideen.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/names/name-uwe.jpg" alt="Uwe">
+</div>
+<div class="card-body">
+<h4>Uwe</h4>
+<p>Individuelles Namensdesign mit thematischem Motiv.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Liebespaare -->
+<div class="panel collection">
+<button class="collection-toggle" type="button">
+<div class="collection-cover">
+<div class="cover-image">
+<img src="assets/images/designs/stand/cover.jpg" alt="Liebespaare Silhouetten">
+</div>
+<div class="cover-text">
+<h3>Liebespaare Silhouetten</h3>
+<p>
+Dekorative Silhouetten-Aufsteller mit verschiedenen Paarvarianten.
+Diese Collection kann später um weitere Motive ergänzt werden.
+</p>
+<span class="collection-hint">Collection öffnen</span>
+</div>
+</div>
+</button>
+
+<div class="collection-content">
+<div class="cards">
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/stand/stand-mw.jpg" alt="Männlich Weiblich">
+</div>
+<div class="card-body">
+<h4>Männlich / Weiblich</h4>
+<p>Paarmotiv mit Herzrahmen als dekorative Aufsteller-Variante.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/stand/stand-mm.jpg" alt="Männlich Männlich">
+</div>
+<div class="card-body">
+<h4>Männlich / Männlich</h4>
+<p>Alternative Paarvariante in derselben Collection.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/stand/stand-ww.jpg" alt="Weiblich Weiblich">
+</div>
+<div class="card-body">
+<h4>Weiblich / Weiblich</h4>
+<p>Passende Paarvariante als Teil der Collection.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/stand/stand-base.jpg" alt="Sockel">
+</div>
+<div class="card-body">
+<h4>Sockel für die Liebespaare</h4>
+<p>Passender Sockel als Teil der Collection.</p>
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Einzelstücke / weitere Designs -->
+<div class="panel collection">
+<button class="collection-toggle" type="button">
+<div class="collection-cover">
+<div class="cover-image">
+<img src="assets/images/designs/more/cover.jpg" alt="Einzelstücke und weitere Designs">
+</div>
+<div class="cover-text">
+<h3>Einzelstücke & weitere Designs</h3>
+<p>
+In diesem Bereich findest du besondere Einzelstücke, kreative Dekorationen
+und weitere Projekte, die nicht direkt in eine feste Collection fallen.
+</p>
+<span class="collection-hint">Collection öffnen</span>
+</div>
+</div>
+</button>
+
+<div class="collection-content">
+<div class="cards">
+
+<div class="card">
+<div class="image-switch"
+data-images="assets/images/designs/more/schwanenbank-1.jpg,assets/images/designs/more/schwanenbank-2.jpg">
+<img src="assets/images/designs/more/schwanenbank-1.jpg" alt="Schwanenbank">
+<div class="tap-hint">Tippen</div>
+<div class="switch-dots">
+<span class="switch-dot active"></span>
+<span class="switch-dot"></span>
+</div>
+</div>
+<div class="card-body">
+<h4>Schwanenbank</h4>
+<p>
+Dekorative kleine Bank mit Schwanendetails und personalisierbarem Schriftzug auf der Rückenlehne.
+</p>
+
+<details class="mini-info">
+<summary>Kurze Erklärung</summary>
+<p>
+Die Schwanenbank kann individuell angepasst werden, zum Beispiel mit Namen,
+einem Datum oder einem kurzen persönlichen Text. Dadurch eignet sie sich
+besonders gut als Geschenk oder als dekoratives Erinnerungsstück.
+</p>
+</details>
+
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/more/hueforge-1.jpg" alt="Mehrfarbiges Bilddesign">
+</div>
+<div class="card-body">
+<h4>Mehrfarbiges Bilddesign</h4>
+<p>
+Dekoratives Einzelstück mit besonderer Tiefenwirkung durch mehrfarbigen 3D-Druck.
+</p>
+
+<details class="mini-info">
+<summary>Kurze Erklärung</summary>
+<p>
+Dieses Motiv entsteht durch mehrere feine Farbschichten im 3D-Druck.
+Dadurch wirkt das Bild je nach Licht und Blickwinkel besonders detailreich
+und erhält eine eigene Tiefenwirkung.
+</p>
+</details>
+
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/more/hueforge-2.jpg" alt="Schlüsselanhänger">
+</div>
+<div class="card-body">
+<h4>Schlüsselanhänger mit Bilddesign</h4>
+<p>
+Kreatives Einzelstück zum mitnehmen.
+</p>
+
+<details class="mini-info">
+<summary>Kurze Erklärung</summary>
+<p>
+Dieses Design gehört zu den dekorativen Einzelstücken und eignet sich
+besonders, als besonderes Geschenk für unterwegs.
+</p>
+</details>
+
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/more/vase.jpg" alt="Vase">
+</div>
+<div class="card-body">
+<h4>Vase</h4>
+<p>
+Schlichte dekorative Vase als Einzelstück für Wohnraum oder Geschenk.
+</p>
+
+<details class="mini-info">
+<summary>Kurze Erklärung</summary>
+<p>
+Die Vase ist als dekoratives Einzelstück gedacht und eignet sich
+besonders für Trockenblumen oder als schlichte Tischdekoration.
+</p>
+</details>
+
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-switch">
+<img src="assets/images/designs/more/story-rail-kita.jpg" alt="Erzählschiene">
+</div>
+<div class="card-body">
+<h4>Erzählschiene für die Kita</h4>
+<p>
+Praktisches Lern- und Erzählmaterial für den Einsatz in Kita oder Betreuung.
+</p>
+
+<details class="mini-info">
+<summary>Kurze Erklärung</summary>
+<p>
+Die Erzählschiene kann für Geschichten, Lernsituationen oder
+kleine pädagogische Einsätze genutzt werden und ist besonders
+für den Kita-Bereich interessant.
+</p>
+</details>
+
+<div class="card-buttons">
+<a class="btn" href="anfrage.html">Anfragen</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</section>
+
+<footer class="panel">
+<div class="footer-grid">
+<div class="footer-box">
+<h5>Varian Sakura</h5>
+<p>
+Private 3D-Druck Pilotphase mit Fokus auf personalisierte Designs und ausgewählte Einzelstücke.
+</p>
+</div>
+
+<div class="footer-box">
+<h5>Navigation</h5>
+<div class="footer-links">
+<a href="index.html">Start</a>
+<a href="designs.html">Designs</a>
+<a href="filament.html">Filament</a>
+<a href="dateien.html">3D Dateien</a>
+<a href="anfrage.html">Anfrage</a>
+<a href="faq.html">FAQ</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+
+<div class="footer-box">
+<h5>MakerWorld</h5>
+<a href="https://makerworld.com/de/@VarianSakura" target="_blank" rel="noopener noreferrer">
+Profil ansehen
+</a>
+</div>
+</div>
+
+<div class="copy">
+© <span id="year"></span> Varian Sakura
+</div>
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const collections = document.querySelectorAll(".collection");
+
+collections.forEach(collection => {
+const toggle = collection.querySelector(".collection-toggle");
+const hint = collection.querySelector(".collection-hint");
+
+toggle.addEventListener("click", () => {
+collection.classList.toggle("open");
+
+if(collection.classList.contains("open")){
+hint.textContent = "Collection schließen";
+}else{
+hint.textContent = "Collection öffnen";
+}
+});
+});
+
+document.querySelectorAll(".image-switch[data-images]").forEach(sw => {
+const imageList = sw.dataset.images.split(",");
+const img = sw.querySelector("img");
+const dots = sw.querySelectorAll(".switch-dot");
+let index = 0;
+
+sw.addEventListener("click", (e) => {
+if(e.target.classList.contains("switch-dot")) return;
+
+index = (index + 1) % imageList.length;
+img.src = imageList[index];
+
+dots.forEach((dot, i) => {
+dot.classList.toggle("active", i === index);
+});
+});
+
+dots.forEach((dot, i) => {
+dot.addEventListener("click", (e) => {
+e.stopPropagation();
+index = i;
+img.src = imageList[index];
+dots.forEach((d, di) => d.classList.toggle("active", di === index));
+});
+});
+});
+</script>
+
+</body>
+</html>
